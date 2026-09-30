@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js 비동기 패턴 학습</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <button class="top-button" onclick="goHome()">☰</button>
+  <div class="brand">
+    <h1>비동기 패턴 실습</h1>
+    <p>Node.js 백엔드 초급 과정</p>
+  </div>
+  <button class="top-button" onclick="goHome()">⌂</button>
+</header>
+
+<main class="page">
+
+  <section class="hero">
+    <div class="node-logo">JS</div>
+    <div>
+      <h2>오늘의 목표</h2>
+      <p>비동기 개념을 이해하고 직접 코드를 작성해 봅니다.</p>
+      <div class="progress-wrap">
+        <div id="progress" class="progress"></div>
+      </div>
+      <small id="progressText">0 / 6 학습 완료</small>
+    </div>
+  </section>
+
+  <section class="section-heading">
+    <div>
+      <h2>📚 학습 순서</h2>
+      <p>1번부터 차례대로 공부해 보세요.</p>
+    </div>
+  </section>
+
+  <section id="lessonCards" class="lesson-grid"></section>
+
+  <section class="flow-card">
+    <h2>💡 비동기 작업의 전체 흐름</h2>
+    <div class="flow">
+      <div>
+        <div class="circle">💻</div>
+        <b>요청</b>
+        <p>브라우저</p>
+      </div>
+      <span>→</span>
+      <div>
+        <div class="circle server">▣</div>
+        <b>비동기 처리</b>
+        <p>Node.js</p>
+      </div>
+      <span>→</span>
+      <div>
+        <div class="circle">↩</div>
+        <b>응답</b>
+        <p>JSON</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="lesson" class="lesson-panel hidden">
+    <div class="lesson-head">
+      <button onclick="closeLesson()">← 목록</button>
+      <span id="lessonNumber"></span>
+    </div>
+
+    <div class="lesson-title">
+      <h2 id="lessonTitle"></h2>
+      <p id="lessonConcept"></p>
+    </div>
+
+    <div class="tip">
+      <strong>🧠 먼저 기억하세요</strong>
+      <p id="lessonTip"></p>
+    </div>
+
+    <h3>1단계 · 개념 보기</h3>
+    <div id="explanation" class="explanation"></div>
+
+    <h3>2단계 · 코드 보기</h3>
+    <pre id="exampleCode" class="editor-view"></pre>
+
+    <button class="big-run" onclick="runSelected()">▶ 직접 실행하기</button>
+
+    <h3>3단계 · 직접 작성하기</h3>
+    <textarea id="editor" spellcheck="false"></textarea>
+
+    <div class="editor-actions">
+      <button onclick="resetEditor()">↻ 초기화</button>
+      <button class="check-button" onclick="checkAnswer()">✓ 코드 확인</button>
+    </div>
+
+    <div id="answerResult" class="answer-result">
+      코드를 수정한 다음 <b>코드 확인</b>을 눌러보세요.
+    </div>
+
+    <h3>4단계 · 실행 결과</h3>
+    <pre id="runResult" class="result"></pre>
+
+    <button class="next-button" onclick="nextLesson()">다음 학습 →</button>
+  </section>
+
+  <section class="finish">
+    <span>✓</span>
+    <div>
+      <h2>천천히, 하나씩!</h2>
+      <p>비동기는 반복해서 직접 실행해 보는 것이 가장 중요합니다.</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

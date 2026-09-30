@@ -1,0 +1,13 @@
+{
+  "name": "async-pattern-nodejs-course",
+  "version": "2.0.0",
+  "description": "초급자를 위한 Node.js 비동기 패턴 코딩 학습 사이트",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
